@@ -9,7 +9,7 @@ public class SceneSelectionController : MonoBehaviour {
     public Animator transitionAnim;
 
     private bool canSwitch = true;
-    private float coolDownUntilNextSwitch = 1.0f;
+    private float coolDownUntilNextSwitch = 0.5f;
 
     GameObject[] sceneImages;
 
