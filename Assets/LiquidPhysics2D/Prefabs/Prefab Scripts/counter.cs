@@ -26,7 +26,7 @@ public class counter : MonoBehaviour
 			int count = 0;
 
 
-
+            //ゲームクリア判定
 			if (lpman.ParticleSystems.Length == 1)
 			{
 				count = lpman.ParticleSystems[0].Particles.Length;
@@ -76,13 +76,14 @@ public class counter : MonoBehaviour
 					    //Debug.Log ("r"+r1);
 					    //Debug.Log ("b"+b1);
 						
+                        //ゲームクリアになる
 						if(Mathf.Abs(0.5f - r1) < 0.3f  && Mathf.Abs(0.5f - b1) < 0.3f ){
 								
+                            //判定の量
                             if (countin > 150)
                             {
-                                //Debug.Log("countin ");
-                                //Debug.Log("goal");
-
+                                
+                                //監督スクリプトに伝わる
                                 gameDirector.GetComponent<GameDirector>().SetGameState();
                             }
 					    }						

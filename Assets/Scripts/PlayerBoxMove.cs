@@ -45,7 +45,7 @@ public class PlayerBoxMove : MonoBehaviour {
              //   boxTem.AddComponent<Rigidbody2D>();
                 //boxTem.GetComponent<Rigidbody2D>() as Rigidbody2D = RigidTem;
                 //boxに加える力を無視しないようにする
-                //boxTem.GetComponent<Rigidbody2D> ().isKinematic = false;
+                boxTem.GetComponent<Rigidbody2D> ().isKinematic = false;
                 boxTem = null;
 				//Debug.Log ("1");			
             }
@@ -79,7 +79,7 @@ public class PlayerBoxMove : MonoBehaviour {
 		
 					//Debug.Log("key down");
 					//boxに加える力を無視するようにする
-					//box.GetComponent<Rigidbody2D> ().isKinematic = true;
+					box.GetComponent<Rigidbody2D> ().isKinematic = true;
                     //box.GetComponent<Rigidbody2D> ().Sleep();//= false;
                     //this.root.GetComponent<PlayerController>().cs = box.GetComponent<BoxCollider2D>();
 
