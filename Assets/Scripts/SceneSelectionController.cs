@@ -49,7 +49,7 @@ public class SceneSelectionController : MonoBehaviour {
             StartCoroutine(SwitchSceneRoutine(1, y));
         }
 
-        if(Input.GetKeyDown(KeyCode.KeypadEnter))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             StartCoroutine(StartLoad());
         }
