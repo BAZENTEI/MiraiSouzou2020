@@ -9,9 +9,8 @@ public class TitleScreenController : MonoBehaviour {
     private void Awake()
     {
             //Set screen size for Standalone
-#if UNITY_STANDALONE
-        Screen.SetResolution(564, 960, true);
-#endif
+
+        Screen.SetResolution(540, 960, false);
     }
 
     void Start () {
