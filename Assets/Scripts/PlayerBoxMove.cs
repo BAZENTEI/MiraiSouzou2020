@@ -14,7 +14,7 @@ public class PlayerBoxMove : MonoBehaviour {
 	private GameObject boxTem;
     //Rigidbody2D RigidTem;
     bool collected = false; //1210
-    // Use this for initialization
+
     void Start()
     {
         root = transform.root.gameObject;
@@ -30,8 +30,7 @@ public class PlayerBoxMove : MonoBehaviour {
     {		
         if(catch_box == true)
         {
-			
-		
+
         }
         else 
         {
@@ -47,7 +46,7 @@ public class PlayerBoxMove : MonoBehaviour {
                 //boxに加える力を無視しないようにする
                 boxTem.GetComponent<Rigidbody2D> ().isKinematic = false;
                 boxTem = null;
-				Debug.Log ("1");			
+				Debug.Log ("1");
             }
   
         }
