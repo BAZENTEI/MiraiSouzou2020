@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Title.unity
     guid: d3aa01ffd2d8b9e4796d7890d6ddf5b3
   - enabled: 1
-    path: Assets/Scene1.unity
+    path: Assets/Scene_example.unity
     guid: a4a2bc0cb286169488974602d7c67501
+  - enabled: 1
+    path: Assets/Scene1.unity
+    guid: 108b82affcfa08743a14348d201dc860
