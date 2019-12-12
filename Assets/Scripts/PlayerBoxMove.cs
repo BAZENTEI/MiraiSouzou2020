@@ -44,7 +44,7 @@ public class PlayerBoxMove : MonoBehaviour {
              //   boxTem.AddComponent<Rigidbody2D>();
                 //boxTem.GetComponent<Rigidbody2D>() as Rigidbody2D = RigidTem;
                 //boxに加える力を無視しないようにする
-                boxTem.GetComponent<Rigidbody2D> ().isKinematic = false;
+                //boxTem.GetComponent<Rigidbody2D> ().isKinematic = false;
                 boxTem = null;
 				Debug.Log ("1");
             }
