@@ -119,22 +119,9 @@ public class player : KinematicObject{
         }
 
         if (move.x > 0.01f)
-        {
-            //spriteRenderer.flipX = false;
-            //1212
-            if (transform.localScale.x > 0)
-                transform.localScale =
-                new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
-        }
+            spriteRenderer.flipX = false;
         else if (move.x < -0.01f)
-        {
-            //spriteRenderer.flipX = true;
-            //1212
-            if(transform.localScale.x < 0)
-            transform.localScale =
-            new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
-        }
-       
+            spriteRenderer.flipX = true;
 
         //animator.SetBool("grounded", IsGrounded);
         //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);

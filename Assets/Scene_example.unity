@@ -1991,7 +1991,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4729000261477208, guid: a1c9a6bb46dfd6d469cd77da204d2cf2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.08
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 4729000261477208, guid: a1c9a6bb46dfd6d469cd77da204d2cf2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2025,11 +2025,6 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 50294432635622318, guid: a1c9a6bb46dfd6d469cd77da204d2cf2,
-        type: 2}
-      propertyPath: m_UseFullKinematicContacts
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1c9a6bb46dfd6d469cd77da204d2cf2, type: 2}
@@ -4506,7 +4501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1304848071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5703,7 +5698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1630757420
 MonoBehaviour:
   m_ObjectHideFlags: 0

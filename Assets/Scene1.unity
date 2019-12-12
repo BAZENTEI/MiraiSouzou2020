@@ -375,9 +375,7 @@ Transform:
   m_Children:
   - {fileID: 1708174380}
   m_Father: {fileID: 0}
-
   m_RootOrder: 14
-
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &41377850
 Animator:
@@ -924,7 +922,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4865435737538062, guid: a207d181f0c30204bb9ebb2ed32a17aa, type: 2}
       propertyPath: m_RootOrder
-     value: 6
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4621863131496046, guid: a207d181f0c30204bb9ebb2ed32a17aa, type: 2}
       propertyPath: m_RootOrder
@@ -7640,7 +7638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1494692904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.46, y: -8.960001, z: 0}
+  m_LocalPosition: {x: 0.46, y: -8.960001, z: -5.467285}
   m_LocalScale: {x: 1, y: 1.025157, z: 1}
   m_Children:
   - {fileID: 447260656}
