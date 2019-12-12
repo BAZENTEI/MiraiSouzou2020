@@ -82,7 +82,7 @@ public class PlayerBoxMove : MonoBehaviour {
                         //Debug.Log("key down");
                         //boxに加える力を無視するようにする
                         box.GetComponent<Rigidbody2D>().isKinematic = true;
-                        box.GetComponent<Rigidbody2D>().useFullKinematicContacts = true;
+                       // box.GetComponent<Rigidbody2D>().useFullKinematicContacts = true;
                         //box.GetComponent<Rigidbody2D> ().Sleep();//= false;
                         //this.root.GetComponent<PlayerController>().cs = box.GetComponent<BoxCollider2D>();
 
@@ -91,6 +91,8 @@ public class PlayerBoxMove : MonoBehaviour {
                         // Destroy(box.GetComponent<Rigidbody2D>());
                         Debug.Log("Key Up 1");
                         collected = true;   //1210
+
+
                     }
                     else if (Input.GetKeyDown(KeyCode.X) && catch_box == true)
                     {
