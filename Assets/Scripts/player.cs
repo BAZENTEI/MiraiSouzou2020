@@ -60,6 +60,7 @@ public class player : KinematicObject{
             {
                 stopJump = true;
                 //Schedule<PlayerStopJump>().player = this;
+                
             }
         }
         else

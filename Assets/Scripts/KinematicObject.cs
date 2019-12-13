@@ -12,7 +12,7 @@ public class KinematicObject : MonoBehaviour
     /// <summary>
     /// A custom gravity coefficient applied to this entity.
     /// </summary>
-    public float gravityModifier = 1f;
+    public float gravityModifier = 5.5f;    //1213
 
     /// <summary>
     /// The current velocity of the entity.
@@ -98,7 +98,7 @@ public class KinematicObject : MonoBehaviour
     {
         //if already falling, fall faster than the jump speed, otherwise use normal gravity.
         if (velocity.y < 0)
-            velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+            velocity += 2.0f * gravityModifier * Physics2D.gravity * Time.deltaTime;
         else
             velocity += Physics2D.gravity * Time.deltaTime;
 
