@@ -9,5 +9,11 @@ EditorBuildSettings:
     path: Assets/Title.unity
     guid: d3aa01ffd2d8b9e4796d7890d6ddf5b3
   - enabled: 1
-    path: Assets/Gameplay.unity
+    path: Assets/DummyScene.unity
     guid: a4a2bc0cb286169488974602d7c67501
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/90b76e86fa0d40c468fa5d6a8d432b5e
+    guid: 90b76e86fa0d40c468fa5d6a8d432b5e
+  - enabled: 1
+    path: Assets/GameClear.unity
+    guid: 138622b0c49cc854681c9db87ae52c2c
