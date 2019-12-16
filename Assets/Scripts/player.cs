@@ -55,7 +55,11 @@ public class player : KinematicObject{
         {
             move.x = Input.GetAxis("Horizontal");
             if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
+            {
                 jumpState = JumpState.PrepareToJump;
+                stopJump = true;
+            }
+                
             else if (Input.GetButtonUp("Jump"))
             {
                 stopJump = true;

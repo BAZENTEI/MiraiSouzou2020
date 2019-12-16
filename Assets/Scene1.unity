@@ -9386,6 +9386,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1395053485371566, guid: 37a02322d718be543847eb99dc29d383, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37a02322d718be543847eb99dc29d383, type: 2}
   m_IsPrefabParent: 0
@@ -9529,12 +9533,17 @@ Prefab:
     - target: {fileID: 114757057000635324, guid: 277b2b1fdb0ed114480e03d4033c3cd4,
         type: 2}
       propertyPath: jumpTakeOffSpeed
-      value: 10
+      value: 7.2
       objectReference: {fileID: 0}
     - target: {fileID: 114156252779625952, guid: 277b2b1fdb0ed114480e03d4033c3cd4,
         type: 2}
       propertyPath: Image
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 50195043201615456, guid: 277b2b1fdb0ed114480e03d4033c3cd4,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 277b2b1fdb0ed114480e03d4033c3cd4, type: 2}
@@ -10857,6 +10866,18 @@ Prefab:
     - target: {fileID: 2300000, guid: 16ba0433fd44ab24fa4222cc618f4729, type: 2}
       propertyPath: m_DynamicOccludee
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 16ba0433fd44ab24fa4222cc618f4729, type: 2}
+      propertyPath: targetColor.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 16ba0433fd44ab24fa4222cc618f4729, type: 2}
+      propertyPath: targetColor.g
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 16ba0433fd44ab24fa4222cc618f4729, type: 2}
+      propertyPath: targetColor.b
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16ba0433fd44ab24fa4222cc618f4729, type: 2}
