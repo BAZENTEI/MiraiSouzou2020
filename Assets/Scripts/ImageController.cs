@@ -5,16 +5,21 @@ using UnityEngine;
 public class ImageController : MonoBehaviour
 {
     public GameObject Image;
+    GameObject Player;
+
 
     // Use this for initialization
     void Start()
     {
-
+        // Player(ロボット)を取得
+        this.Player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         // 左クリックしたとき、オブジェクト表示
         if (Input.GetMouseButtonDown(0))
         {
