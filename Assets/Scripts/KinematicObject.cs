@@ -98,7 +98,7 @@ public class KinematicObject : MonoBehaviour
     {
         //if already falling, fall faster than the jump speed, otherwise use normal gravity.
         if (velocity.y < 0)
-            velocity += 2.0f * gravityModifier * Physics2D.gravity　* Time.deltaTime;
+            velocity +=  gravityModifier * Physics2D.gravity　* Time.deltaTime;
         else
             velocity += Physics2D.gravity * Time.deltaTime;
 

@@ -24,7 +24,7 @@ public class player : KinematicObject{
     public JumpState jumpState = JumpState.Grounded;
     private bool stopJump;
     /*internal new*/
-    public Collider2D collider2d;
+    //public Collider2D collider2d;
     /*internal new*/
     //public AudioSource audioSource;
   //  public Health health;
@@ -34,16 +34,16 @@ public class player : KinematicObject{
     Vector2 move;
     SpriteRenderer spriteRenderer;
     internal Animator animator;
-  //  readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+    //  readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
-
-    
+    public float m_time = 0.0f;//1217
+    public float m_MaxTime;
 
     void Awake()
     {
         //health = GetComponent<Health>();
         //audioSource = GetComponent<AudioSource>();
-        collider2d = GetComponent<Collider2D>();
+       // collider2d = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
@@ -53,19 +53,39 @@ public class player : KinematicObject{
     protected override void Update() {
         if (controlEnabled)
         {
+            //1217
+            if (m_time > m_MaxTime)
+            {
+                stopJump = true;
+                //Debug.Log("stopJump");
+                m_time = 0.0f;
+                //Schedule<PlayerStopJump>().player = this;
+
+            }
+            else if (jumpState == JumpState.InFlight )
+            {
+                //!
+                if (velocity.y > 0)
+                {
+                    m_time += Time.deltaTime;
+                }
+                   
+              
+            }
+            if(jumpState == JumpState.Landed)
+            {
+                m_time = 0.0f;
+            }
+           
+
             move.x = Input.GetAxis("Horizontal");
             if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
             {
                 jumpState = JumpState.PrepareToJump;
-                stopJump = true;
+                //stopJump = true;
             }
-                
-            else if (Input.GetButtonUp("Jump"))
-            {
-                stopJump = true;
-                //Schedule<PlayerStopJump>().player = this;
-                
-            }
+            //Input.GetButtonUp("Jump")
+             
         }
         else
         {
@@ -101,6 +121,7 @@ public class player : KinematicObject{
                 break;
             case JumpState.Landed:
                 jumpState = JumpState.Grounded;
+
                 break;
         }
     }
