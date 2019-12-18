@@ -12,7 +12,7 @@ public class counter : MonoBehaviour
     public Vector2 min = new Vector2(-3.0f, 0.0f);
     public Vector2 max = new Vector2(0.0f, 3.5f);
     public Vector3 error;
-    public int game;
+    public int gameClear;
     public Color targetColor;
     // Use this for initialization
     void Start()
@@ -62,7 +62,7 @@ public class counter : MonoBehaviour
                         //判定の量
                         Debug.Log(countin);
 
-                        if (countin > game)
+                        if (countin > gameClear)
                         {
                             //監督スクリプトに伝わる
                             gameDirector.GetComponent<GameDirector>().SetGameState();
