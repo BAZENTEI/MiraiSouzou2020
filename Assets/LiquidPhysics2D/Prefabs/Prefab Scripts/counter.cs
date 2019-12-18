@@ -11,7 +11,8 @@ public class counter : MonoBehaviour
 
     public Vector2 min = new Vector2(-3.0f, 0.0f);
     public Vector2 max = new Vector2(0.0f, 3.5f);
-
+    public Vector3 error;
+    public int game;
     public Color targetColor;
     // Use this for initialization
     void Start()
@@ -49,9 +50,9 @@ public class counter : MonoBehaviour
                         float b = lpman.ParticleSystems[0].Particles[i]._Color.b;
 
                         //ゲームクリアになる
-                        if (Mathf.Abs(targetColor.r - r) < 0.3f &&
-                           Mathf.Abs(targetColor.b - b) < 0.3f &&
-                           Mathf.Abs(targetColor.g - g) < 0.3f)
+                        if (Mathf.Abs(targetColor.r - r) < error.x &&
+                           Mathf.Abs(targetColor.b - b) < error.y &&
+                           Mathf.Abs(targetColor.g - g) < error.z)
                         {
 
                             countin++;
@@ -61,7 +62,7 @@ public class counter : MonoBehaviour
                         //判定の量
                         Debug.Log(countin);
 
-                        if (countin > 150)
+                        if (countin > game)
                         {
                             //監督スクリプトに伝わる
                             gameDirector.GetComponent<GameDirector>().SetGameState();
