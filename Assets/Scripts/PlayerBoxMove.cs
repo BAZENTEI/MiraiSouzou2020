@@ -21,7 +21,7 @@ public class PlayerBoxMove : MonoBehaviour {
         defaultHandPos = transform.localPosition;
         //charcter_size = root.gameObject.GetComponent<RectTransform>().sizeDelta;
 
-		    HandUp = new Vector2( 0.0f,  4.3f);//修正　頭の上
+		    HandUp = new Vector2( 0.0f,  3.5f);//修正　頭の上
 
 		//boxTem = GameObject.Find("Box (1)");
     }
