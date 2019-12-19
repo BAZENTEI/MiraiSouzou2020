@@ -9,22 +9,22 @@ public class SceneSelectionController : MonoBehaviour {
     public Animator transitionAnim;
 
     private bool canSwitch = true;
-    private float coolDownUntilNextSwitch = 1.0f;
+    private float coolDownUntilNextSwitch = 0.5f;
 
-    GameObject[] sceneImages;
+    GameObject[] sceneSelections;
 
     int selectedScene;
 	// Use this for initialization
 	void Start () {
         selectedScene = 1;
-        sceneImages = GameObject.FindGameObjectsWithTag("SceneSelectionTag");
+        sceneSelections = GameObject.FindGameObjectsWithTag("SceneSelectionTag");
 	}
 
     private void FixedUpdate()
     {
         for (int i = 0; i < 9; ++i)
         {
-            Animator animator = sceneImages[i].GetComponent<Animator>();
+            Animator animator = sceneSelections[i].GetComponent<Animator>();
             if (selectedScene - 1 == i)
             {
                 animator.SetBool("active", true);
@@ -49,9 +49,9 @@ public class SceneSelectionController : MonoBehaviour {
             StartCoroutine(SwitchSceneRoutine(1, y));
         }
 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetButtonDown("Jump"))
         {
-            StartCoroutine(StartLoad());
+            StartCoroutine(StartLoadScene());
         }
     }
 
@@ -91,16 +91,15 @@ public class SceneSelectionController : MonoBehaviour {
         }
     }
 
-    IEnumerator StartLoad()
+    IEnumerator StartLoadScene()
     {
         string sceneName = "Scene" + selectedScene;
-        transitionAnim.SetTrigger("end");
-        foreach(GameObject obj in sceneImages)
+        foreach(GameObject obj in sceneSelections)
         {
             Animator anim = obj.GetComponent<Animator>();
             anim.SetTrigger("fadeOut");
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0);
 
         SceneManager.LoadScene(sceneName);
     }
