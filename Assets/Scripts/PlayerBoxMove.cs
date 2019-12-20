@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBoxMove : MonoBehaviour {
+public class PlayerBoxMove : MonoBehaviour
+{
     //Vector2 pos;
     public bool catch_box;
     private Vector2 defaultHandPos;
     private Vector2 HandUp;
-   // private Vector2 parentPos;
+    // private Vector2 parentPos;
     //private Vector2 charcter_size;
     public GameObject root;
-	//boxの変数
-	private GameObject boxTem;
+    //boxの変数
+    private GameObject boxTem;
     //Rigidbody2D RigidTem;
     bool collected = false; //1210
+
+    public GameObject Image;
+    public GameObject Image2;
 
     void Start()
     {
@@ -21,40 +25,62 @@ public class PlayerBoxMove : MonoBehaviour {
         defaultHandPos = transform.localPosition;
         //charcter_size = root.gameObject.GetComponent<RectTransform>().sizeDelta;
 
-		    HandUp = new Vector2( 0.0f,  3.5f);//修正　頭の上
+        HandUp = new Vector2(0.0f, 3.7f);//修正　頭の上
 
-		//boxTem = GameObject.Find("Box (1)");
+        //boxTem = GameObject.Find("Box (1)");
+
+        Image.SetActive(false);
+        Image2.SetActive(false);
     }
     // Update is called once per frame
-    void Update ()
-    {		
-        if(catch_box == true)
+    void Update()
+    {
+        if (catch_box == true)
         {
-
+            Image2.SetActive(true);
         }
-        else 
+        else
         {
-			//Debug.Log ("1");		
+            //Debug.Log ("1");		
             transform.localPosition = defaultHandPos;
 
-            if(boxTem!=null&&boxTem.transform.IsChildOf(transform))
+            if (boxTem != null && boxTem.transform.IsChildOf(transform))
             {
                 boxTem.transform.parent = null;
 
-             //   boxTem.AddComponent<Rigidbody2D>();
+                //   boxTem.AddComponent<Rigidbody2D>();
                 //boxTem.GetComponent<Rigidbody2D>() as Rigidbody2D = RigidTem;
                 //boxに加える力を無視しないようにする
-                boxTem.GetComponent<Rigidbody2D> ().isKinematic = false;
+                boxTem.GetComponent<Rigidbody2D>().isKinematic = false;
                 boxTem = null;
-				Debug.Log ("1");
+                Debug.Log("1");
+
+                Image2.SetActive(false);
             }
-  
+
         }
         collected = false;//1210
+
     }
+
+    //12/20
+    /*
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        Image.SetActive(true);
+    }
+    */
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Image.SetActive(false);
+    }
+
 
     public void OnTriggerStay2D(Collider2D other)
     {
+        Image.SetActive(true);
+
         if (!collected)
         {
             //ジャンプ中は持ち上げることができない
@@ -97,7 +123,6 @@ public class PlayerBoxMove : MonoBehaviour {
                         catch_box = false;
                         Debug.Log("Key Up2");
                         collected = true;//1210
-
                     }
 
 
@@ -109,4 +134,5 @@ public class PlayerBoxMove : MonoBehaviour {
         }
 
     }
+
 }
