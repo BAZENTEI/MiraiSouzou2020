@@ -7,6 +7,7 @@ public class SceneTransition : MonoBehaviour {
 
     public Animator transitionAnim;
     public GameObject GameClearObject;
+    public GameDirector gameDirector;
 
     public string targetSceneName;
 
@@ -36,11 +37,22 @@ public class SceneTransition : MonoBehaviour {
         {
             StartCoroutine(GameRestart());
         }
-        if (Input.GetButtonDown("Submit"))
+        if(Input.GetButtonDown("Cancel"))
+        {
+            StartCoroutine(GameReset());
+        }
+        if (gameDirector.gameClear)
         {
             StartCoroutine(GameClear());
         }
 	}
+
+    IEnumerator GameReset()
+    {
+        transitionAnim.SetTrigger("end");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Title");
+    }
 
     IEnumerator GameRestart()
     {

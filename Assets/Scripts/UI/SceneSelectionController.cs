@@ -16,16 +16,16 @@ public class SceneSelectionController : MonoBehaviour {
     int selectedScene;
 	// Use this for initialization
 	void Start () {
-        selectedScene = 1;
+        selectedScene = 0;
         sceneSelections = GameObject.FindGameObjectsWithTag("SceneSelectionTag");
 	}
 
     private void FixedUpdate()
     {
-        for (int i = 0; i < 9; ++i)
+        for (int i = 0; i < sceneSelections.Length; ++i)
         {
             Animator animator = sceneSelections[i].GetComponent<Animator>();
-            if (selectedScene - 1 == i)
+            if (selectedScene == i)
             {
                 animator.SetBool("active", true);
             }
@@ -49,7 +49,7 @@ public class SceneSelectionController : MonoBehaviour {
             StartCoroutine(SwitchSceneRoutine(1, y));
         }
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Interaction"))
         {
             StartCoroutine(StartLoadScene());
         }
@@ -62,23 +62,37 @@ public class SceneSelectionController : MonoBehaviour {
             canSwitch = false;
             if(direction == 0)
             {
-                if(value > 0 && selectedScene % 3 != 0)
+                if(selectedScene != 0)
                 {
-                    selectedScene += 1;
-                }
-                if (value < 0 && (selectedScene - 1) % 3 != 0)
-                {
-                    selectedScene -= 1;
+                    if (value > 0 && selectedScene % 3 != 0)
+                    {
+                        selectedScene += 1;
+                    }
+                    if (value < 0 && (selectedScene - 1) % 3 != 0)
+                    {
+                        selectedScene -= 1;
+                    }
                 }
             }
             if(direction == 1)
             {
-                if (value > 0 && selectedScene > 3)
+                if (value > 0)
                 {
-                    selectedScene -= 3;
+                    if (selectedScene > 3)
+                    {
+                        selectedScene -= 3;
+                    }
+                    else
+                    {
+                        selectedScene = 0;
+                    }
                 }
-                if (value < 0 && selectedScene < 7)
+                if (value < 0)
                 {
+                    if (selectedScene == 0)
+                        selectedScene = 2;
+
+                    else if(selectedScene < sceneSelections.Length - 3)
                     selectedScene += 3;
                 }
             }
@@ -93,7 +107,7 @@ public class SceneSelectionController : MonoBehaviour {
 
     IEnumerator StartLoadScene()
     {
-        string sceneName = "Scene" + selectedScene;
+        string sceneName = "Scene" + (selectedScene + 1);
         foreach(GameObject obj in sceneSelections)
         {
             Animator anim = obj.GetComponent<Animator>();

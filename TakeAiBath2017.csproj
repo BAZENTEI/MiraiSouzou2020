@@ -313,6 +313,7 @@
     <Compile Include="Assets\Scripts\KinematicObject.cs" />
     <Compile Include="Assets\Scripts\LPParticleSpawner.cs" />
     <Compile Include="Assets\Scripts\LPTarget.cs" />
+    <Compile Include="Assets\Scripts\Percent.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\PlayerAnimController.cs" />
     <Compile Include="Assets\Scripts\PlayerBoxMove.cs" />

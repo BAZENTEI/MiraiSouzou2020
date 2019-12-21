@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4021572464278910}
-  - component: {fileID: 114709490771246346}
   m_Layer: 0
   m_Name: Counter
   m_TagString: Untagged
@@ -39,7 +38,7 @@ GameObject:
   - component: {fileID: 102242739113711096}
   - component: {fileID: 114663724332956278}
   m_Layer: 0
-  m_Name: 'nums '
+  m_Name: Percentage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533774219981970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.36, y: -5.34, z: 0}
+  m_LocalPosition: {x: -13.5, y: -17.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4021572464278910}
@@ -183,7 +182,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5af708264865ae9459f82afc313d11ee, type: 3}
+  - {fileID: 2100000, guid: 8a6796f75a6274b419f35ab3f719f308, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -209,7 +208,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610281632646438}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -265,20 +264,20 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533774219981970}
-  m_Text: 
+  m_Text: Text
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
-  m_Anchor: 4
-  m_Alignment: 1
+  m_Anchor: 5
+  m_Alignment: 2
   m_TabSize: 5
-  m_FontSize: 40
+  m_FontSize: 60
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 5af708264865ae9459f82afc313d11ee, type: 3}
+  m_Font: {fileID: 12800000, guid: 8a6796f75a6274b419f35ab3f719f308, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4281691391
+    rgba: 2063532032
 --- !u!102 &102566675377210286
 TextMesh:
   serializedVersion: 3
@@ -313,18 +312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txt: {fileID: 102242739113711096}
   gameDirector: {fileID: 0}
---- !u!114 &114709490771246346
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349785479662592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a61eb0a6335d5041bbc6d5e1ac8faf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Color: {r: 0.28844076, g: 0.5848091, b: 0.71323526, a: 1}
 --- !u!114 &114995874780957668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,6 +327,6 @@ MonoBehaviour:
   gameDirector: {fileID: 0}
   min: {x: -2.6, y: -8.3}
   max: {x: 0, y: -5.5}
-  error: {x: 0.3, y: 1, z: 0.3}
+  error: {x: 0.3, y: 0.3, z: 0.3}
   gameClear: 50
-  targetColor: {r: 0.5019608, g: 0, b: 0.5019608, a: 0}
+  targetColor: {r: 0, g: 0, b: 1, a: 1}

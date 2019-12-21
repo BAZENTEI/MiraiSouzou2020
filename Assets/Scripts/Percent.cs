@@ -14,6 +14,6 @@ public class Percent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        txt.text = "Percent:  " + gameDirector.gage.ToString();
+        txt.text = gameDirector.gage.ToString() + "%";
     }
 }

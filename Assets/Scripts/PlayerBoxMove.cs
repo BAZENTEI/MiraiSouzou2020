@@ -61,7 +61,7 @@ public class PlayerBoxMove : MonoBehaviour {
                 // Debug.Log(Time.deltaTime);
                 //if (this.root.GetComponent<PlayerController> ().inair == false) 
                 {
-                    if (Input.GetKeyDown(KeyCode.X) && catch_box == false)
+                    if (Input.GetButtonDown("Interaction") && catch_box == false)
                     {
                         transform.localPosition = HandUp;
 
@@ -90,7 +90,7 @@ public class PlayerBoxMove : MonoBehaviour {
                         Debug.Log("Key Up 1");
                         collected = true;   //1210
                     }
-                    else if (Input.GetKeyDown(KeyCode.X) && catch_box == true)
+                    else if (Input.GetButtonDown("Interaction") && catch_box == true)
                     {
                         catch_box = false;
                         Debug.Log("Key Up2");
