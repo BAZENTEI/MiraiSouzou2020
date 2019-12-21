@@ -161,8 +161,8 @@ public class player : KinematicObject{
                 new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
         }
 
-        //animator.SetBool("grounded", IsGrounded);
-        //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetBool("grounded", IsGrounded);
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
         targetVelocity = move * maxSpeed;
     }
