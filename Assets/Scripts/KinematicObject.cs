@@ -7,7 +7,7 @@ public class KinematicObject : MonoBehaviour
     /// <summary>
     /// The minimum normal (dot product) considered suitable for the entity sit on.
     /// </summary>
-    public float minGroundNormalY = .65f;
+    private float minGroundNormalY = .65f;
 
     /// <summary>
     /// A custom gravity coefficient applied to this entity.
