@@ -6,7 +6,7 @@ public class PlayerBoxMove : MonoBehaviour {
     //Vector2 pos;
     public bool catch_box;
     private Vector2 defaultHandPos;
-    private Vector2 HandUp;
+    public Vector2 HandUp;
    // private Vector2 parentPos;
     //private Vector2 charcter_size;
     public GameObject root;
@@ -15,15 +15,13 @@ public class PlayerBoxMove : MonoBehaviour {
     //Rigidbody2D RigidTem;
     bool collected = false; //1210
 
+    
+
     void Start()
     {
         root = transform.root.gameObject;
         defaultHandPos = transform.localPosition;
-        //charcter_size = root.gameObject.GetComponent<RectTransform>().sizeDelta;
-
-		    HandUp = new Vector2( 0.0f,  3.5f);//修正　頭の上
-
-		//boxTem = GameObject.Find("Box (1)");
+       
     }
     // Update is called once per frame
     void Update ()

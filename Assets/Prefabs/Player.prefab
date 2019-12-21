@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catch_box: 0
+  HandUp: {x: 0, y: 4}
   root: {fileID: 0}
 --- !u!114 &114915029137734488
 MonoBehaviour:
