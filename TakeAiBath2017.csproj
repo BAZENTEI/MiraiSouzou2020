@@ -307,6 +307,7 @@
     <Compile Include="Assets\LiquidPhysics2D\Testbed scripts\TestBedManager.cs" />
     <Compile Include="Assets\LiquidPhysics2D\Testbed scripts\TouchManager.cs" />
     <Compile Include="Assets\Scripts\ColliderPoint.cs" />
+    <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\GameDirector.cs" />
     <Compile Include="Assets\Scripts\human_sindan.cs" />
     <Compile Include="Assets\Scripts\ImageController.cs" />
