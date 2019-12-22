@@ -322,6 +322,8 @@
     <Compile Include="Assets\Scripts\PlayerController2.cs" />
     <Compile Include="Assets\Scripts\sindan.cs" />
     <Compile Include="Assets\Scripts\sindan2.cs" />
+    <Compile Include="Assets\Scripts\UI\CheckAction.cs" />
+    <Compile Include="Assets\Scripts\UI\CheckJump.cs" />
     <Compile Include="Assets\Scripts\UI\GameClearController.cs" />
     <Compile Include="Assets\Scripts\UI\HexagonGridController.cs" />
     <Compile Include="Assets\Scripts\UI\SceneSelectionController.cs" />
