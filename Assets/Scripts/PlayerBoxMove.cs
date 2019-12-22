@@ -15,13 +15,14 @@ public class PlayerBoxMove : MonoBehaviour {
     //Rigidbody2D RigidTem;
     bool collected = false; //1210
 
-    
+    internal Animator animator;
+
 
     void Start()
     {
         root = transform.root.gameObject;
         defaultHandPos = transform.localPosition;
-       
+        animator = root.GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update ()
@@ -49,17 +50,25 @@ public class PlayerBoxMove : MonoBehaviour {
   
         }
         collected = false;//1210
+
+        if(catch_box)
+        {
+            animator.SetBool("catchBox", true);
+        }
+        else
+        {
+            animator.SetBool("catchBox", false);
+        }
     }
 
     public void OnTriggerStay2D(Collider2D other)
     {
         if (!collected)
         {
-            //ジャンプ中は持ち上げることができない
             if (other.gameObject.tag == "boxTrigger")
             {
-                // Debug.Log(Time.deltaTime);
-                //if (this.root.GetComponent<PlayerController> ().inair == false) 
+                //ジャンプ中は持ち上げることができない
+                if (this.root.GetComponent<player> ().IsGrounded) 
                 {
                     if (Input.GetKeyDown(KeyCode.X) && catch_box == false)
                     {
@@ -75,25 +84,18 @@ public class PlayerBoxMove : MonoBehaviour {
 
 
                         boxTem = box.gameObject;
-                        //LPBody更新
-
-                        //Debug.Log("key down");
+                                            
                         //boxに加える力を無視するようにする
                         box.GetComponent<Rigidbody2D>().isKinematic = true;
                         box.GetComponent<Rigidbody2D>().useFullKinematicContacts = true;
                         //box.GetComponent<Rigidbody2D> ().Sleep();//= false;
                         //this.root.GetComponent<PlayerController>().cs = box.GetComponent<BoxCollider2D>();
-
-                        // Instantiate(box.GetComponent<Rigidbody2D>()) ;
-
-                        // Destroy(box.GetComponent<Rigidbody2D>());
-                        Debug.Log("Key Up 1");
+                                          
                         collected = true;   //1210
                     }
                     else if (Input.GetKeyDown(KeyCode.X) && catch_box == true)
                     {
-                        catch_box = false;
-                        Debug.Log("Key Up2");
+                        catch_box = false;                    
                         collected = true;//1210
 
                     }
