@@ -559,7 +559,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0.92105263
+  m_ExitTime: 1
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -716,7 +716,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: robot-land
-  m_Speed: 1
+  m_Speed: 1000
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101097057239182888}
@@ -734,7 +734,7 @@ AnimatorState:
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
-  m_CycleOffsetParameter: 
+  m_CycleOffsetParameter: velocityX
   m_TimeParameter: 
 --- !u!1102 &1102163680967197018
 AnimatorState:
