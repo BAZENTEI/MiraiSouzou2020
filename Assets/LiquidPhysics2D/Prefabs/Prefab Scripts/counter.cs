@@ -6,7 +6,6 @@ public class counter : MonoBehaviour
     public TextMesh txt;
     LPManager lpman;
 
-
     public GameObject gameDirector;
 
     public Vector2 min = new Vector2(-3.0f, 0.0f);
@@ -14,6 +13,11 @@ public class counter : MonoBehaviour
     public Vector3 error;
     public int gameClear;
     public Color targetColor;
+
+    int countin = 0;
+    //パーティクールのフラグ
+    const int UNUSED = 0;
+    const int USED = 1;
 
     // Use this for initialization
     void Start()
@@ -23,7 +27,6 @@ public class counter : MonoBehaviour
 
     }
 
-
     IEnumerator howmany()
     {
         while (true)
@@ -31,7 +34,7 @@ public class counter : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
 
             int count = 0;
-            int countin = 0;
+            //int countin = 0;
 
             //ゲームクリア判定
             if (lpman.ParticleSystems.Length == 1)
@@ -42,10 +45,14 @@ public class counter : MonoBehaviour
                 {
                     Vector2 particle = new Vector2(lpman.ParticleSystems[0].Particles[i].Position.x, lpman.ParticleSystems[0].Particles[i].Position.y);
 
-                    if ((particle.x > min.x && particle.x < max.x) && (particle.y > min.y && particle.y < max.y))
+                    if ((particle.x > min.x && particle.x < max.x) && (particle.y > min.y && particle.y < max.y)&&
+                        lpman.ParticleSystems[0].Particles[i].UserData == UNUSED)
                     {
                         //Debug.Log(lpman.ParticleSystems[0].Particles[i]._Color);
 
+                        //通ったパーティクール  
+                        lpman.ParticleSystems[0].Particles[i].UserData = USED;
+                   
                         float r = lpman.ParticleSystems[0].Particles[i]._Color.r;
                         float g = lpman.ParticleSystems[0].Particles[i]._Color.g;
                         float b = lpman.ParticleSystems[0].Particles[i]._Color.b;
