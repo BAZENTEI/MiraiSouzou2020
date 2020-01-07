@@ -12,6 +12,11 @@ public class player : KinematicObject{
         Landed
     }
 
+    public AudioSource soundJump;
+    public AudioSource soundWalk;
+
+    private double dTime;
+
     /// <summary>
     /// Max horizontal speed of the player.
     /// </summary>
@@ -48,6 +53,32 @@ public class player : KinematicObject{
         animator = GetComponent<Animator>();
     }
 
+    void UpdateSound()
+    {
+        double time = AudioSettings.dspTime;
+
+        if (move.x != 0.0f && IsGrounded)
+        {
+            if (!soundWalk.isPlaying)
+            {
+                if (time > dTime)
+                {
+                    dTime = AudioSettings.dspTime;
+                    soundWalk.Play();
+                    dTime += 0.25;
+                }
+            }
+            else
+            {
+                soundWalk.Stop();
+            }
+        }
+
+        if (jumpState == JumpState.PrepareToJump && !soundJump.isPlaying)
+        {
+            soundJump.Play();
+        }
+    }
 
     // Update is called once per frame
     protected override void Update() {
@@ -91,6 +122,7 @@ public class player : KinematicObject{
         {
             move.x = 0;
         }
+        UpdateSound();
         UpdateJumpState();
         base.Update();
     }

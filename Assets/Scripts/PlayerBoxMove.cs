@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBoxMove : MonoBehaviour {
-    //Vector2 pos;
+    
     public bool catch_box;
     private Vector2 defaultHandPos;
     public Vector2 HandUp;
-   // private Vector2 parentPos;
-    //private Vector2 charcter_size;
+
     public GameObject root;
-	//boxの変数
-	private GameObject boxTem;
-    //Rigidbody2D RigidTem;
+
+    public AudioSource soundPickup;
+    public AudioSource soundDrop;
+
+    //box用変数
+    private GameObject boxTem;
     bool collected = false; //1210
 
     internal Animator animator;
-
 
     void Start()
     {
@@ -92,12 +93,21 @@ public class PlayerBoxMove : MonoBehaviour {
                         //this.root.GetComponent<PlayerController>().cs = box.GetComponent<BoxCollider2D>();
                                           
                         collected = true;   //1210
+
+                        if(!soundPickup.isPlaying)
+                        {
+                            soundPickup.Play();
+                        }
                     }
                     else if (Input.GetButtonDown("Interaction") && catch_box == true)
                     {
                         catch_box = false;                    
                         collected = true;//1210
 
+                        if (!soundDrop.isPlaying)
+                        {
+                            soundDrop.Play();
+                        }
                     }
 
 
