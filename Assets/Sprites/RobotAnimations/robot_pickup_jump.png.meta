@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: aaafedcc9b77b6d4eb462827da733b72
+guid: 94e5fc33aa1f8304299d981c5a261eb1
 TextureImporter:
   fileIDToRecycleName:
     21300000: robot_pickup_jump_0
+    21300002: robot_pickup_jump_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,6 +85,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robot_pickup_jump_1
+      rect:
+        serializedVersion: 2
+        x: 300
         y: 0
         width: 300
         height: 500
