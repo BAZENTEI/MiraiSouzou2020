@@ -38,6 +38,8 @@ public class CameraZoom : MonoBehaviour {
             frame++;
         }
         
+        /*if(frame == frameDest)
+            gameDirector.GetComponent<GameDirector>().SetGameState();*/
     }
 
 

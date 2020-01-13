@@ -9,6 +9,11 @@ public class GameDirector : MonoBehaviour
     public int  gage = 0;
 
     public bool performance = false;
+    bool gameClearWait = false;//演出の終わりからゲームクリアまでの時間カウントを開始
+
+    float delta = 0.0f;
+    public float span = 0.5f;//待つ時間
+
     // Use this for initialization
     void Start()
     {
@@ -18,12 +23,17 @@ public class GameDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(gameClearWait)
+        {
+            delta += Time.deltaTime;
+            if(delta > span)
+            gameClear = true;
+        }
     }
 
     public void SetGameState()
     {
-        gameClear = true;
+        gameClearWait = true;
     }
 
     public void SetPerformance()
@@ -46,5 +56,7 @@ public class GameDirector : MonoBehaviour
         }
 
     }
+
+
 
 }

@@ -4,22 +4,44 @@ using UnityEngine;
 
 public class human_sindan : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public GameObject gameDirector;
+    bool firstTranslation;
+    bool stop;
+    // Use this for initialization
+    void Start () {
+
+        firstTranslation = false;
+        stop = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        
 
-        Vector3 pos = transform.position;
-
-        //下に移動
-        transform.Translate(0, -0.01f, 0);
-
-        if (pos.y <= -12.0f)
+        if (transform.position.y > -10.5f && firstTranslation == false)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            //下に移動
+            transform.Translate(0, -0.01f, 0);
+
+            //all right?
+            if(transform.position.y <= -10.5f)
+                firstTranslation = true;
+
+        }
+
+
+        if(gameDirector.GetComponent<GameDirector>().performance == true && stop == false)
+        {
+            transform.Translate(0, 0.03f, 0);
+            if (transform.position.y >= -7.02f)
+            {
+                stop = true;
+                gameDirector.GetComponent<GameDirector>().SetGameState();
+            }
+                
+                
         }
 
     }
