@@ -73,7 +73,8 @@ public class counter : MonoBehaviour
                         if (countin > gameClear)
                         {
                             //監督スクリプトに伝わる
-                            gameDirector.GetComponent<GameDirector>().SetGameState();
+                            //gameDirector.GetComponent<GameDirector>().SetGameState();
+                            gameDirector.GetComponent<GameDirector>().SetPerformance();
                             break;
                         }
                     }

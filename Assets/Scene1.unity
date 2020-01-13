@@ -8197,6 +8197,7 @@ GameObject:
   - component: {fileID: 1763991273}
   - component: {fileID: 1763991272}
   - component: {fileID: 1763991271}
+  - component: {fileID: 1763991275}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -8279,6 +8280,23 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1763991275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1763991269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e213a0f9aa9b4896a7269459fbfc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
+  endSize: 0
+  startSize: 0
+  frameDest: 0
+  gameDirector: {fileID: 1906203117}
 --- !u!1 &1785466795
 GameObject:
   m_ObjectHideFlags: 0
@@ -8810,6 +8828,10 @@ Prefab:
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 1320804208}
+    - target: {fileID: 1378521120398416, guid: bf1d4929c3caae544a0f1be74f6b790c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf1d4929c3caae544a0f1be74f6b790c, type: 2}
   m_IsPrefabParent: 0

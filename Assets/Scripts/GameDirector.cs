@@ -7,6 +7,8 @@ public class GameDirector : MonoBehaviour
 
     public bool gameClear = false;
     public int  gage = 0;
+
+    public bool performance = false;
     // Use this for initialization
     void Start()
     {
@@ -22,6 +24,11 @@ public class GameDirector : MonoBehaviour
     public void SetGameState()
     {
         gameClear = true;
+    }
+
+    public void SetPerformance()
+    {
+        performance = true;
     }
 
     public bool SetGage(float percent)
