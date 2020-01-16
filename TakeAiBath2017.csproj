@@ -326,6 +326,7 @@
     <Compile Include="Assets\Scripts\UI\CheckAction.cs" />
     <Compile Include="Assets\Scripts\UI\CheckJump.cs" />
     <Compile Include="Assets\Scripts\UI\GameClearController.cs" />
+    <Compile Include="Assets\Scripts\UI\GameInfoController.cs" />
     <Compile Include="Assets\Scripts\UI\HexagonGridController.cs" />
     <Compile Include="Assets\Scripts\UI\HintController.cs" />
     <Compile Include="Assets\Scripts\UI\SceneSelectionController.cs" />

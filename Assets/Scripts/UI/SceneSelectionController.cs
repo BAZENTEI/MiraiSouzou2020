@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSelectionController : MonoBehaviour {
     public TitleScreenController titleScreen;
+    public GameInfoController gameInfo;
     public Animator transitionAnim;
 
     private bool canSwitch = true;
@@ -18,9 +19,11 @@ public class SceneSelectionController : MonoBehaviour {
 	void Start () {
         selectedScene = 0;
         sceneSelections = GameObject.FindGameObjectsWithTag("SceneSelectionTag");
-	}
+        UpdateButton();
 
-    private void FixedUpdate()
+    }
+
+    void UpdateButton()
     {
         for (int i = 0; i < sceneSelections.Length; ++i)
         {
@@ -53,6 +56,18 @@ public class SceneSelectionController : MonoBehaviour {
         {
             StartCoroutine(StartLoadScene());
         }
+        if(Input.GetButtonDown("Cancel"))
+        {
+            StartCoroutine(CallCredits());
+        }
+        UpdateButton();
+    }
+    IEnumerator CallCredits()
+    {
+        yield return new WaitForSeconds(0.05f);
+
+        gameObject.SetActive(false);
+        gameInfo.gameObject.SetActive(true);
     }
 
     IEnumerator SwitchSceneRoutine(int direction, float value)
