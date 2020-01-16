@@ -5,14 +5,18 @@ using UnityEngine;
 public class human_sindan : MonoBehaviour {
 
     public GameObject gameDirector;
+   
     bool firstTranslation;
     bool stop;
+    bool pose;
     // Use this for initialization
     void Start () {
 
         firstTranslation = false;
         stop = false;
+        pose = false;
 
+        
     }
 	
 	// Update is called once per frame
@@ -34,15 +38,15 @@ public class human_sindan : MonoBehaviour {
 
         if(gameDirector.GetComponent<GameDirector>().performance == true && stop == false)
         {
-            transform.Translate(0, 0.03f, 0);
+            transform.Translate(0, 0.015f, 0);
             if (transform.position.y >= -7.02f)
             {
                 stop = true;
-                gameDirector.GetComponent<GameDirector>().SetGameState();
-            }
-                
+                pose = true;
+                //gameDirector.GetComponent<GameDirector>().SetGameState();
+            }    
                 
         }
-
+       GameObject.Find("human_flame").GetComponent<Animator>().SetBool("pose", pose);
     }
 }

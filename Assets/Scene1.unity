@@ -1074,8 +1074,9 @@ GameObject:
   - component: {fileID: 185336961}
   - component: {fileID: 185336960}
   - component: {fileID: 185336959}
+  - component: {fileID: 185336962}
   m_Layer: 0
-  m_Name: human_anim2_0
+  m_Name: human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1155,6 +1156,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &185336962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185336958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba90b0e22d431b4b8d6b3f3caa2f9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameDirector: {fileID: 1906203117}
 --- !u!1 &208946682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2143,8 @@ GameObject:
   m_Component:
   - component: {fileID: 385241620}
   - component: {fileID: 385241621}
+  - component: {fileID: 385241623}
+  - component: {fileID: 385241622}
   m_Layer: 0
   m_Name: human_flame
   m_TagString: Untagged
@@ -2194,6 +2209,35 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &385241622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385241619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba90b0e22d431b4b8d6b3f3caa2f9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameDirector: {fileID: 1906203117}
+--- !u!95 &385241623
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385241619}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e81698a134d8b344aa1734e2a1b4541, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &386399322
 GameObject:
   m_ObjectHideFlags: 0
@@ -6163,6 +6207,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114973054905285492, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: gameClear
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eef8076b591b67149b49e47cac3a41dc, type: 2}
   m_IsPrefabParent: 0
@@ -9117,7 +9166,7 @@ Prefab:
     - target: {fileID: 114250420013132624, guid: bea5531b16d2e1b4da381d7c3055fdca,
         type: 2}
       propertyPath: span
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bea5531b16d2e1b4da381d7c3055fdca, type: 2}
