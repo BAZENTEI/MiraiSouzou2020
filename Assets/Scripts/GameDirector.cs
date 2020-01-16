@@ -14,10 +14,11 @@ public class GameDirector : MonoBehaviour
     float delta = 0.0f;
     public float span = 0.5f;//待つ時間
 
+    public GameObject human;
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -29,6 +30,8 @@ public class GameDirector : MonoBehaviour
             if(delta > span)
             gameClear = true;
         }
+
+        //if(human.GetComponent<Animator>().)
     }
 
     public void SetGameState()
