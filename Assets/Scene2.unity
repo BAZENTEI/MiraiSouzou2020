@@ -2290,6 +2290,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114250420013132624, guid: bea5531b16d2e1b4da381d7c3055fdca,
+        type: 2}
+      propertyPath: span
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bea5531b16d2e1b4da381d7c3055fdca, type: 2}
   m_IsPrefabParent: 0
@@ -4329,7 +4334,6 @@ MonoBehaviour:
   GameClearUI: {fileID: 1725375190}
   GamePauseUI: {fileID: 63409513}
   gameDirector: {fileID: 949390996}
-  targetSceneName: GameClear
 --- !u!1 &773593057
 GameObject:
   m_ObjectHideFlags: 0
@@ -7116,6 +7120,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1276707503}
   - component: {fileID: 1276707504}
+  - component: {fileID: 1276707505}
+  - component: {fileID: 1276707506}
   m_Layer: 0
   m_Name: human_flame
   m_TagString: Untagged
@@ -7180,6 +7186,35 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &1276707505
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1276707502}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e81698a134d8b344aa1734e2a1b4541, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1276707506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1276707502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba90b0e22d431b4b8d6b3f3caa2f9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameDirector: {fileID: 949390995}
 --- !u!1 &1277750777
 GameObject:
   m_ObjectHideFlags: 0
