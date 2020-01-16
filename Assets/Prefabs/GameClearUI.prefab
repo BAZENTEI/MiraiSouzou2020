@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224933932074284980}
   m_Layer: 5
-  m_Name: GameClearObject
+  m_Name: GameClearUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

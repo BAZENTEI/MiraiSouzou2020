@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour {
 
     public Animator transitionAnim;
-    public GameObject GameClearObject;
+    public GameObject GameClearUI;
+    public GameObject GamePauseUI;
     public GameDirector gameDirector;
 
-    public string targetSceneName;
-
     public static string NextSceneId { get; private set; }
+    public bool gamePaused { get; private set; }
 
     void Start()
     {
-        GameClearObject.SetActive(false);
+        GamePauseUI.SetActive(false);
+        GameClearUI.SetActive(false);
         string CurrentSceneId = SceneManager.GetActiveScene().name;
         int id = 0;
         try
@@ -33,19 +34,49 @@ public class SceneTransition : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetButtonDown("Reset"))
+        if (Input.GetButtonDown("Cancel"))
         {
-            StartCoroutine(GameRestart());
+            if (gamePaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
-        if(Input.GetButtonDown("Cancel"))
+        if(gamePaused)
         {
-            StartCoroutine(GameReset());
+            if(Input.GetButtonDown("Interaction"))
+            {
+                StartCoroutine(GameReset());
+                Resume();
+            }
+            else if (Input.GetButtonDown("Jump"))
+            {
+                StartCoroutine(GameRestart());
+                Resume();
+            }
         }
-        if (gameDirector.gameClear)
+        else if (gameDirector.gameClear)
         {
             StartCoroutine(GameClear());
         }
 	}
+
+    void Pause()
+    {
+        GamePauseUI.SetActive(true);
+        Time.timeScale = 0.0f;
+        gamePaused = true;
+    }
+
+    void Resume()
+    {
+        GamePauseUI.SetActive(false);
+        Time.timeScale = 1.0f;
+        gamePaused = false;
+    }
 
     IEnumerator GameReset()
     {
@@ -66,9 +97,9 @@ public class SceneTransition : MonoBehaviour {
     IEnumerator GameClear()
     {
         transitionAnim.SetTrigger("end");
-        GameClearObject.SetActive(true);
+        GameClearUI.SetActive(true);
         yield return new WaitForSeconds(1.5f);
 
-        SceneManager.LoadScene(targetSceneName);
+        SceneManager.LoadScene("GameClear");
     }
 }
