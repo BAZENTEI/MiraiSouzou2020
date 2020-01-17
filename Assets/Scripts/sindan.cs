@@ -17,12 +17,12 @@ public class sindan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
+        
 
         //下に移動
-        transform.Translate(0, -0.01f, 0);
+        transform.Translate(0, -0.5f * Time.deltaTime, 0);
 
-        if (pos.y <= -9.0f)
+        if (transform.position.y <= -9.0f)
         {
             gameObject.SetActive(false);
         }
