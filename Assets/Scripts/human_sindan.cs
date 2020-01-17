@@ -47,6 +47,9 @@ public class human_sindan : MonoBehaviour {
             }    
                 
         }
+
+        //!
        GameObject.Find("human_flame").GetComponent<Animator>().SetBool("pose", pose);
+       GameObject.Find("human_back").GetComponent<Animator>().SetBool("pose", pose);
     }
 }
