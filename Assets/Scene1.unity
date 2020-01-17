@@ -375,6 +375,11 @@ Prefab:
       propertyPath: m_Name
       value: BoxRect
       objectReference: {fileID: 0}
+    - target: {fileID: 212972811222116148, guid: cc9b712b3fc9f644183663628db92a56,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc9b712b3fc9f644183663628db92a56, type: 2}
   m_IsPrefabParent: 0
@@ -3206,7 +3211,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: c1cc347a5a38b8e43befa04e86be2bf8, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.36078432, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4452,6 +4457,11 @@ Prefab:
     - target: {fileID: 212022982516506380, guid: cc39d8bf83d3a2b4f8bf9d1df2e3e429,
         type: 2}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212022982516506380, guid: cc39d8bf83d3a2b4f8bf9d1df2e3e429,
+        type: 2}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5985,6 +5995,16 @@ Prefab:
         type: 2}
       propertyPath: gameClear
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973054905285492, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: targetColor.g
+      value: 0.36078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 102396615579782432, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4294925312
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eef8076b591b67149b49e47cac3a41dc, type: 2}
@@ -9500,7 +9520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2000807008
 MonoBehaviour:
   m_ObjectHideFlags: 0
