@@ -4536,6 +4536,31 @@ Prefab:
       propertyPath: gameDirector
       value: 
       objectReference: {fileID: 949390996}
+    - target: {fileID: 102396615579782432, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4294902015
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973054905285492, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: targetColor.r
+      value: 0.5441177
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973054905285492, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: targetColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973054905285492, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: targetColor.b
+      value: 0.5441177
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973054905285492, guid: eef8076b591b67149b49e47cac3a41dc,
+        type: 2}
+      propertyPath: gameClear
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eef8076b591b67149b49e47cac3a41dc, type: 2}
   m_IsPrefabParent: 0
@@ -8183,11 +8208,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4240056393951360, guid: cc9b712b3fc9f644183663628db92a56, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.31
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 4240056393951360, guid: cc9b712b3fc9f644183663628db92a56, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.692
+      value: -3.75
       objectReference: {fileID: 0}
     - target: {fileID: 4240056393951360, guid: cc9b712b3fc9f644183663628db92a56, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10931,7 +10956,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4734058556535226, guid: cc39d8bf83d3a2b4f8bf9d1df2e3e429, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.28
+      value: 6.22
       objectReference: {fileID: 0}
     - target: {fileID: 4734058556535226, guid: cc39d8bf83d3a2b4f8bf9d1df2e3e429, type: 2}
       propertyPath: m_LocalPosition.z
