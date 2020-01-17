@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : KinematicObject{
+public class player : KinematicObject
+{
     public enum JumpState
     {
         Grounded,
@@ -28,27 +29,19 @@ public class player : KinematicObject{
 
     public JumpState jumpState = JumpState.Grounded;
     private bool stopJump;
-    /*internal new*/
-    //public Collider2D collider2d;
-    /*internal new*/
-    //public AudioSource audioSource;
-  //  public Health health;
+
     public bool controlEnabled = true;
 
     bool jump;
     Vector2 move;
     SpriteRenderer spriteRenderer;
     internal Animator animator;
-    //  readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
-    public float m_time = 0.0f;//1217
+    public float m_time = 0.0f;
     public float m_MaxTime;
 
     void Awake()
     {
-        //health = GetComponent<Health>();
-        //audioSource = GetComponent<AudioSource>();
-       // collider2d = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
@@ -81,47 +74,45 @@ public class player : KinematicObject{
     }
 
     // Update is called once per frame
-    protected override void Update() {
+    protected override void Update()
+    {
         if (controlEnabled)
         {
-            //1217
+            // ポーズ中の動作を禁止する
+            if (Time.timeScale == 0)
+                return;
+
             if (m_time > m_MaxTime)
             {
                 stopJump = true;
-                //Debug.Log("stopJump");
                 m_time = 0.0f;
-                //Schedule<PlayerStopJump>().player = this;
 
             }
-            else if (jumpState == JumpState.InFlight )
+            else if (jumpState == JumpState.InFlight)
             {
-                //!
                 if (velocity.y > 0)
                 {
                     m_time += Time.deltaTime;
                 }
-                   
-              
             }
-            if(jumpState == JumpState.Landed)
+
+            if (jumpState == JumpState.Landed)
             {
                 m_time = 0.0f;
             }
-           
 
             move.x = Input.GetAxis("Horizontal");
+
             if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
             {
                 jumpState = JumpState.PrepareToJump;
-                //stopJump = true;
             }
-            //Input.GetButtonUp("Jump")
-             
         }
         else
         {
             move.x = 0;
         }
+
         UpdateSound();
         UpdateJumpState();
         base.Update();
@@ -147,7 +138,7 @@ public class player : KinematicObject{
             case JumpState.InFlight:
                 if (IsGrounded)
                 {
-                   // Schedule<PlayerLanded>().player = this;
+                    // Schedule<PlayerLanded>().player = this;
                     jumpState = JumpState.Landed;
                 }
                 break;
@@ -172,22 +163,18 @@ public class player : KinematicObject{
             if (velocity.y > 0)
             {
                 //model.jumpDeceleration
-                velocity.y = velocity.y * 0.5f ;
+                velocity.y = velocity.y * 0.5f;
             }
         }
 
         if (move.x > 0.01f)
         {
-            //spriteRenderer.flipX = false;
-            //1212
             if (transform.localScale.x > 0)
                 transform.localScale =
                 new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
         }
         else if (move.x < -0.01f)
         {
-            //spriteRenderer.flipX = true;
-            //1212
             if (transform.localScale.x < 0)
                 transform.localScale =
                 new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
@@ -195,7 +182,7 @@ public class player : KinematicObject{
 
         animator.SetBool("grounded", IsGrounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-        
+
         targetVelocity = move * maxSpeed;
     }
 }

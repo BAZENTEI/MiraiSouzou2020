@@ -6,11 +6,7 @@ using UnityEngine.UI;
 public class CheckAction : MonoBehaviour {
 
     public player player;
-
     public PlayerBoxMove playerHand;
-
-    Color color;
-    static Color transparent = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
     public enum CheckType
     {
@@ -19,6 +15,10 @@ public class CheckAction : MonoBehaviour {
         Pick,
     }
     public CheckType type;
+
+    static Color transparent = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+
+    Color color;
     Image image;
 
 	void Start () {
@@ -36,13 +36,13 @@ public class CheckAction : MonoBehaviour {
         switch(type)
         {
             case CheckType.All:
-                SetOpacity(player.controlEnabled);
+                SetOpacity(player.controlEnabled && player.IsGrounded);
                 break;
             case CheckType.Drop:
-                SetOpacity(player.controlEnabled && playerHand.catch_box);
+                SetOpacity(player.controlEnabled && player.IsGrounded && playerHand.catch_box);
                 break;
             case CheckType.Pick:
-                SetOpacity(player.controlEnabled && !playerHand.catch_box);
+                SetOpacity(player.controlEnabled && player.IsGrounded && !playerHand.catch_box);
                 break;
         }
 	}
