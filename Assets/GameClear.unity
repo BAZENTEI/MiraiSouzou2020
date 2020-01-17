@@ -2264,6 +2264,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1443699653441672, guid: d63d92d544e623f48933ae56c002fef8, type: 2}
+      propertyPath: m_TagString
+      value: NextLevelTag
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63d92d544e623f48933ae56c002fef8, type: 2}
   m_IsPrefabParent: 0
@@ -2627,7 +2631,7 @@ GameObject:
   - component: {fileID: 1513408259}
   m_Layer: 5
   m_Name: ButtonCircle
-  m_TagString: Untagged
+  m_TagString: NextLevelTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

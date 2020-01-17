@@ -22,13 +22,15 @@ public class SceneTransition : MonoBehaviour {
         try
         {
             id = int.Parse(CurrentSceneId.Replace("Scene", ""));
+            if (id >= 4)
+                NextSceneId = "Title";
+            else
+                NextSceneId = "Scene" + (id % 9 + 1);
         }
         catch(System.Exception e)
         {
             Debug.Log("Exception source: " + e.Source);
         }
-
-        NextSceneId = "Scene" + (id % 9 + 1);
     }
     
     // Update is called once per frame

@@ -11,10 +11,20 @@ public class GameClearController : MonoBehaviour {
     void Start()
     {
         nextScene = SceneTransition.NextSceneId;
+        
+        if(nextScene == "Title")
+        {
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("NextLevelTag");
+
+            foreach (GameObject obj in gameObjects)
+            {
+                obj.SetActive(false);
+            }
+        }
     }
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Interaction"))
+		if(nextScene != "Title" && Input.GetButtonDown("Interaction"))
         {
             StartCoroutine(NextScene());
         }

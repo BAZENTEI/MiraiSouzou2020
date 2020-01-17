@@ -41,15 +41,10 @@ public class SceneSelectionController : MonoBehaviour {
     
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        if (x != 0)
+        float dir = Input.GetAxis("Vertical");
+        if (dir != 0f)
         {
-            StartCoroutine(SwitchSceneRoutine(0, x));
-        }
-        if(y != 0)
-        {
-            StartCoroutine(SwitchSceneRoutine(1, y));
+            StartCoroutine(SwitchSceneRoutine(dir));
         }
 
         if(Input.GetButtonDown("Interaction"))
@@ -70,47 +65,20 @@ public class SceneSelectionController : MonoBehaviour {
         gameInfo.gameObject.SetActive(true);
     }
 
-    IEnumerator SwitchSceneRoutine(int direction, float value)
+    IEnumerator SwitchSceneRoutine(float value)
     {
         if (canSwitch)
         {
             canSwitch = false;
-            if(direction == 0)
+            if (value > 0)
             {
-                if(selectedScene != 0)
-                {
-                    if (value > 0 && selectedScene % 3 != 0)
-                    {
-                        selectedScene += 1;
-                    }
-                    if (value < 0 && (selectedScene - 1) % 3 != 0)
-                    {
-                        selectedScene -= 1;
-                    }
-                }
+                selectedScene = (selectedScene + sceneSelections.Length - 1) % sceneSelections.Length;
             }
-            if(direction == 1)
+            else
             {
-                if (value > 0)
-                {
-                    if (selectedScene > 3)
-                    {
-                        selectedScene -= 3;
-                    }
-                    else
-                    {
-                        selectedScene = 0;
-                    }
-                }
-                if (value < 0)
-                {
-                    if (selectedScene == 0)
-                        selectedScene = 2;
+                selectedScene = (selectedScene + 1) % sceneSelections.Length;
+            }
 
-                    else if(selectedScene < sceneSelections.Length - 3)
-                    selectedScene += 3;
-                }
-            }
             yield return new WaitForSeconds(coolDownUntilNextSwitch);
             canSwitch = true;
         }

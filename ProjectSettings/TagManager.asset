@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - SceneSelectionTag
+  - Ground
+  - boxTrigger
+  - Box
+  - NextLevelTag
   layers:
   - Default
   - TransparentFX
