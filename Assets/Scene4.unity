@@ -12308,6 +12308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1745321614}
   - component: {fileID: 1745321615}
+  - component: {fileID: 1745321616}
   m_Layer: 0
   m_Name: human_back
   m_TagString: Untagged
@@ -12372,6 +12373,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &1745321616
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1745321613}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f57d520609febb4980f4131c573d17b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1758984526
 GameObject:
   m_ObjectHideFlags: 0

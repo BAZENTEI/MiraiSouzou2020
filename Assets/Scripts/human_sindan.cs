@@ -27,7 +27,7 @@ public class human_sindan : MonoBehaviour {
         {
             //gameObject.SetActive(false);
             //下に移動
-            transform.Translate(0, -0.01f, 0);
+            transform.Translate(0, -0.5f * Time.deltaTime, 0);
 
             //all right?
             if(transform.position.y <= -10.5f)
@@ -38,7 +38,7 @@ public class human_sindan : MonoBehaviour {
 
         if(gameDirector.GetComponent<GameDirector>().performance == true && stop == false)
         {
-            transform.Translate(0, 0.015f, 0);
+            transform.Translate(0, 0.75f * Time.deltaTime, 0);
             if (transform.position.y >= -7.02f)
             {
                 stop = true;
@@ -47,6 +47,9 @@ public class human_sindan : MonoBehaviour {
             }    
                 
         }
+
+        //!
        GameObject.Find("human_flame").GetComponent<Animator>().SetBool("pose", pose);
+       GameObject.Find("human_back").GetComponent<Animator>().SetBool("pose", pose);
     }
 }

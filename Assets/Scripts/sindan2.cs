@@ -21,7 +21,7 @@ public class sindan2 : MonoBehaviour
         Vector3 pos = transform.position;
 
         //下に移動
-        transform.Translate(0, 0.01f, 0);
+        transform.Translate(0, 0.5f * Time.deltaTime, 0);
 
         if (pos.y <= -9.0f)
         {
