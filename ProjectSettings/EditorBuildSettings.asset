@@ -20,13 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene4.unity
     guid: c17ab042e80c9724fb8b8bd0ef93d3cd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene5.unity
     guid: c6684a77d52c5364aa0f51d575242f24
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene6.unity
     guid: e5aa21573356ebf49b0d0e2306978b6a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene7.unity
     guid: cc7903fd9a0bf204b9b74fa92af468f7
   - enabled: 1
