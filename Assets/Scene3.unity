@@ -3967,6 +3967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDirector: {fileID: 963648697}
+  variation: 1
 --- !u!95 &444647737
 Animator:
   serializedVersion: 3
@@ -9448,11 +9449,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4571645926314184, guid: 9b3ec840616e2a64ca2fdd150db69d53, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.15
+      value: -6.3165
       objectReference: {fileID: 0}
     - target: {fileID: 4571645926314184, guid: 9b3ec840616e2a64ca2fdd150db69d53, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.9207582
+      value: -4.9035
       objectReference: {fileID: 0}
     - target: {fileID: 4571645926314184, guid: 9b3ec840616e2a64ca2fdd150db69d53, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9494,7 +9495,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4571645926314184, guid: 9b3ec840616e2a64ca2fdd150db69d53, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.71761
+      value: 0.71761006
       objectReference: {fileID: 0}
     - target: {fileID: 61644568986597426, guid: 9b3ec840616e2a64ca2fdd150db69d53,
         type: 2}
