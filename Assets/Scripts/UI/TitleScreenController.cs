@@ -10,7 +10,7 @@ public class TitleScreenController : MonoBehaviour {
     {
             //Set screen size for Standalone
 
-        Screen.SetResolution(540, 960, false);
+        Screen.SetResolution(540, 960, true);
     }
 
     void Start () {
